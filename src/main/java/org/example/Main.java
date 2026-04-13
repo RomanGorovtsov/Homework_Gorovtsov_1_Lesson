@@ -12,10 +12,6 @@ public class Main {
         int priceOfKebab = 560;
         int countOfSolvedKebabs = 900;
 
-        getAllData(name, jobTitle, ratePerShift, countOfShifts, awardCont, fineForBurntLavash, priceOfKebab, countOfSolvedKebabs);
-    }
-
-    public static void getAllData(String name, String jobTitle, int ratePerShift, int countOfShifts, int awardCont, int fineForBurntLavash, int priceOfKebab, int countOfSolvedKebabs) {
         int baseSalary = countOfShifts * ratePerShift;
         int totalSalary = baseSalary + awardCont - fineForBurntLavash;
         int totalRevenue = priceOfKebab * countOfSolvedKebabs;
@@ -30,4 +26,5 @@ public class Main {
                 Шаур-выручка: %d
                 """, name, jobTitle, baseSalary, awardCont, fineForBurntLavash, totalSalary, totalRevenue);
     }
+
 }
