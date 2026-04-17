@@ -1,30 +1,20 @@
 package org.example;
 
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
+        Random random = new Random();
 
-        String name = "Роман";
-        String jobTitle = "Шаурмичный QA-инженер";
-        int ratePerShift = 8000;
-        int countOfShifts = 21;
-        int awardCont = 10000;
-        int fineForBurntLavash = 3000;
-        int priceOfKebab = 560;
-        int countOfSolvedKebabs = 900;
+        int age = random.nextInt(80);
+        double bankAccountSum = random.nextDouble() * 100000;
 
-        int baseSalary = countOfShifts * ratePerShift;
-        int totalSalary = baseSalary + awardCont - fineForBurntLavash;
-        int totalRevenue = priceOfKebab * countOfSolvedKebabs;
+        boolean moreThan18 = age>18;
+        boolean hasInvitation = true;
+        boolean inBlackList = false;
 
-        System.out.printf("""
-                Сотрудник: %s
-                Должность: %s
-                Оплата за смены: %d
-                Премия: %d
-                Штраф: %d
-                Итоговая зарплата: %d
-                Шаур-выручка: %d
-                """, name, jobTitle, baseSalary, awardCont, fineForBurntLavash, totalSalary, totalRevenue);
+        boolean prohodit = moreThan18 && (hasInvitation || bankAccountSum > 50000) && !inBlackList;
+        System.out.println(prohodit);
+        System.out.println("Обязательный добровольный взнос " + (int) bankAccountSum * 0.075);
     }
-
 }
